@@ -1,11 +1,12 @@
-var { EventEmitter } = require('events');
+var http = require('http');
+var fas = require('fas');
+var server = http.createServer(handleRequest)
 
-var myEmitter = new EventEmitter();
-myEmitter.on('notice',(msg) => {
-  console.log('event emitted' + msg);
+function handleRequest(res,req) {
+  res.setHeader('Content-Type', 'text/plain')
+  fs.createReadStream('./readme.txt').pipe(res);
+}
+server.listen(3000 ,()=> {
+  console.log('server listening on  port 3k')
 })
 
-myEmitter.emit('notice', "Hello World");
-myEmitter.on('notice',() => {
-  console.log('event emitted 2');
-})

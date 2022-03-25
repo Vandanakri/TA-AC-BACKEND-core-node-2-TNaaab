@@ -13,7 +13,7 @@ Write code to
 - capture absolute path of `server.js`(itself)
 - get absolute path of `app.js`
 - get realtive path of `index.html`
-- get absolute path of `index.html` using `path module` 
+- get absolute path of `index.html` using `path module`
  
 #### Capture data on server
 
